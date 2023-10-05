@@ -1,27 +1,64 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  scroll-behavior: smooth;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply font-Poppins;
+}
+section {
+  @apply py-40 w-full overflow-hidden;
+}
+@layer utilities {
+  .container {
+    @apply relative w-full h-full mx-auto px-6 md:px-12;
+  }
+  .transit {
+    @apply duration-150 ease-linear;
+  }
+
+  /* Flexs */
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .md-flex-center {
+    @apply md:flex items-center justify-center;
+  }
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+  .flex-start {
+    @apply flex justify-start items-start flex-col;
+  }
+  /* Tags */
+  .nav {
+    @apply bg-secondary fixed top-0 z-50 w-full transit;
+  }
+  .hero {
+    @apply h-screen bg-secondary bg-[url('/images/hero-bg.jpg')] bg-center bg-cover bg-no-repeat overflow-hidden;
+  }
+
+  /* Components */
+  .aLink {
+    @apply text-sm font-medium tracking-widest text-gray-400 uppercase transit hover:text-gray-50;
+  }
+  .overlay {
+    @apply w-full h-full bg-secondary bg-opacity-70;
+  }
+  .headHero {
+    @apply mt-8 mb-5 text-center md:text-left text-gray-50 lg:text-7xl md:text-6xl tracking-wider text-5xl font-bold !leading-[70px];
+  }
+  .subHero {
+    @apply text-center md:text-left text-gray-400 text-base md:text-lg !leading-8 tracking-wider;
+  }
+  .headSection {
+    @apply text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-[50px] tracking-wider;
+  }
+  .subSection {
+    @apply text-base md:text-lg  text-gray-200 leading-8 tracking-wider;
+  }
+  .pargraph {
+    @apply text-base md:text-lg leading-8 tracking-wider;
+  }
 }
