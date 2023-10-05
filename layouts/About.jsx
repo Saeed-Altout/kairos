@@ -16,7 +16,7 @@ import video from "@/public/images/video-bg-2400.jpg";
 const About = () => {
   const { carosel, width } = useStateContext();
   return (
-    <section className="bg-priamry" id="about">
+    <section className="overflow-visible bg-priamry" id="about">
       <div className="container">
         <TitleSection
           title="Simply The Best Messaging App Out There."
@@ -49,23 +49,23 @@ const About = () => {
             className="object-contain w-full h-full opacity-30"
           />
 
-          <span className="absolute flex-center w-10 h-10 bg-white rounded-full md:w-16 md:h-16 left-10 top-10 cursor-pointer">
+          <span className="absolute w-10 h-10 bg-white rounded-full cursor-pointer flex-center md:w-16 md:h-16 left-10 top-10">
             <BsPlayFill className="text-xl text-black md:text-4xl" />
           </span>
 
-          <div className="absolute bottom-5 left-10 flex-between md:flex-start gap-5 md:flex-col">
+          <div className="absolute gap-5 bottom-5 left-10 flex-between md:flex-start md:flex-col">
             <div>
-              <h5 className="md:text-4xl lg:text-5xl tracking-widest font-bold text-white text-3xl">
+              <h5 className="text-3xl font-bold tracking-widest text-white md:text-4xl lg:text-5xl">
                 3.1M
               </h5>
-              <p className="pargraph text-gray-200">Downloads</p>
+              <p className="text-gray-200 pargraph">Downloads</p>
             </div>
 
             <div>
-              <h5 className="md:text-4xl lg:text-5xl tracking-widest font-bold text-white text-3xl">
+              <h5 className="text-3xl font-bold tracking-widest text-white md:text-4xl lg:text-5xl">
                 24K
               </h5>
-              <p className="pargraph text-gray-200">Positive Reviews</p>
+              <p className="text-gray-200 pargraph">Positive Reviews</p>
             </div>
           </div>
         </div>
