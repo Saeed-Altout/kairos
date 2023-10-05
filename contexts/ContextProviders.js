@@ -19,13 +19,17 @@ export const ContextProviders = ({ children }) => {
   const year = new Date().getFullYear();
 
   // Handler
+  const onload = () => {
+    setWidth(localStorage.getItem("width"));
+  };
   const handelScreenSize = useCallback(() => {
     const screenWidth = window.innerWidth;
     setWidth(screenWidth);
-    console.log(width);
+    localStorage.setItem("width", screenWidth);
   }, [width]);
 
   useEffect(() => {
+    onload();
     window.addEventListener("resize", handelScreenSize);
     return () => {
       window.removeEventListener("resize", handelScreenSize);

@@ -1,6 +1,7 @@
 import { navLinks } from "@/constants";
 
 import { useStateContext } from "@/contexts/ContextProviders";
+import Link from "next/link";
 
 const MenuDesktop = () => {
   const { activeLink, setActiveLink } = useStateContext();
@@ -13,12 +14,12 @@ const MenuDesktop = () => {
             setActiveLink(link.label);
           }}
         >
-          <a
+          <Link
             href={link.href}
             className={`${activeLink === link.label && "!text-gray-50"} aLink`}
           >
             {link.label}
-          </a>
+          </Link>
         </li>
       ))}
     </ul>

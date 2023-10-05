@@ -9,6 +9,7 @@ import { navLinksFooter } from "@/constants";
 import { Button, TitleSection } from "@/components";
 
 import { useStateContext } from "@/contexts/ContextProviders";
+import Link from "next/link";
 
 const Footer = () => {
   const { year } = useStateContext();
@@ -52,12 +53,12 @@ const Footer = () => {
             <ul className="flex-start gap-2">
               {navLinksFooter.map((link, index) => (
                 <li key={index}>
-                  <a
+                  <Link
                     href={link.href}
                     className="pargraph text-gray-300 transit hover:text-gray-50"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -77,9 +78,12 @@ const Footer = () => {
               <li>
                 <p className="pargraph text-gray-300 mt-5">
                   Need help or have a question? Contact us at:{" "}
-                  <a href="/" className="text-gray-50 pargraph font-semibold">
+                  <Link
+                    href="https://support@kairos.com"
+                    className="text-gray-50 pargraph font-semibold"
+                  >
                     support@kairos.com
-                  </a>
+                  </Link>
                 </p>
               </li>
             </ul>
@@ -87,15 +91,15 @@ const Footer = () => {
         </div>
 
         <div className="text-gray-50 flex-center md:flex-start !flex-row text-2xl gap-5  my-10">
-          <a href="/">
+          <Link href="www.facebook.com">
             <BsFacebook />
-          </a>
-          <a href="/">
+          </Link>
+          <Link href="www.twitter.com">
             <BsTwitter />
-          </a>
-          <a href="/">
+          </Link>
+          <Link href="www.instgram.com">
             <BsInstagram />
-          </a>
+          </Link>
         </div>
 
         <p className="pargraph text-gray-300 text-center w-fit mx-auto block">

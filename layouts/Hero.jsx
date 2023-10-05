@@ -26,6 +26,7 @@ const Hero = () => {
           <Image
             src={phone}
             alt="Phone"
+            width={400}
             className="hidden lg:block lg:max-w-sm 2xl:max-w-md w-full ml-10"
           />
         </div>

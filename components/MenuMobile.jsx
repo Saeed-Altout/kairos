@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { navLinks } from "@/constants";
 import { navVariants } from "@/utils/motion";
 import { useStateContext } from "@/contexts/ContextProviders";
+import Link from "next/link";
 
 const MenuMobile = () => {
   const { activeMenu, activeLink, setActiveLink } = useStateContext();
@@ -22,12 +23,12 @@ const MenuMobile = () => {
             setActiveLink(link.label);
           }}
         >
-          <a
+          <Link
             href={link.href}
             className={`${activeLink === link.label && "text-gray-50"} aLink`}
           >
             {link.label}
-          </a>
+          </Link>
         </li>
       ))}
     </motion.ul>
